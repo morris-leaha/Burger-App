@@ -1,0 +1,25 @@
+{
+  "name": "burger-app",
+  "version": "1.0.0",
+  "description": "Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat then logs the burgers, allowing them to be devoured when they want!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morris-leaha/Burger-App.git"
+  },
+  "author": "leah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/morris-leaha/Burger-App/issues"
+  },
+  "homepage": "https://github.com/morris-leaha/Burger-App#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mysql": "^2.16.0"
+  }
+}
