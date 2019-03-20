@@ -1,0 +1,31 @@
+html, body {
+    height: 100%;
+    background-color: black;
+    background-image: url("../images/gourmetBurger&Fries.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+header {
+    margin-top: 1rem;
+}
+
+.container {
+    flex: 1 0 auto;
+}
+
+.sticky-footer {
+    flex-shrink: 0;
+    background: none;
+    text-align: center;
+    font-size: 0.65rem;
+    color: white;
+}

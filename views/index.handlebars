@@ -1,0 +1,81 @@
+<div class="container" id="main-container">
+
+    <header>
+        <div class="row">
+            <div class="col">
+                <div>
+                    <h1 class="app-title">Burger Diary</h1>
+                    <h4 class="app-description">An app dedicated to keeping track of all of your favorite burgers</h4>
+                    <div class="app-instructions" id="instructions">
+                        <span>Enter.</span>
+                        <span>Save.</span>
+                        <span>Eat Now.</span>
+                        <span>Eat Later.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <section id="create-burger">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control" placeholder="Burger Name..." aria-label="Burger Name..."
+                            aria-describedby="submit-btn">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit" id="submit-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="all-burgers">
+            <div class="row">
+
+                <div class="col" id="stored-burgers">
+                    <div class="card border-dark">
+                        <div class="card-header">Burgers to Eat</div>
+                        <div class="card-body text-dark">
+                            <ul>
+                                {{#each burgers}}
+                                    {{!-- #unless because values burgers with devoured=false return "falsy" values --}}
+                                    {{#unless devoured}}
+                                        {{> burgers/burger-option devoured=false}}
+                                    {{/unless}}
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" id="devoured-burgers">
+                    <div class="card border-dark">
+                        <div class="card-header">Devoured Burgers</div>
+                        <div class="card-body text-dark">
+                            <ul>
+                                {{#each burgers}}
+                                    {{!-- if helper because we expect these burgers now be devoured=true (not falsy)--}}
+                                    {{#if devoured}}
+                                        {{> burgers/burger-option devoured=true}}
+                                    {{/if}}
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+</div>
+
+<footer class="footer sticky-footer">
+    <div class="container text-center">
+        <span>Copyright &copy; 2018 Leah Morris</span>
+    </div>
+</footer>
