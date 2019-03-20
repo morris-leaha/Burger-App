@@ -22,25 +22,25 @@
         <section id="create-burger">
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="input-group mt-3">
+                    <div class="input-group create-btn-div">
                         <input type="text" class="form-control" name="burgerName" placeholder="Burger Name..." aria-label="Burger Name..."
                             aria-describedby="submit-btn">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="submit" id="submit-btn">Save</button>
+                            <button class="btn btn-outline-secondary text-white" type="submit" id="submit-btn">Save</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="all-burgers">
+        <section class="all-burgers" id="view-burgers">
             <div class="row">
 
                 <div class="col" id="stored-burgers">
                     <div class="card border-dark">
-                        <div class="card-header">Burgers to Eat</div>
+                        <div class="card-header text-dark">Burgers to Eat</div>
                         <div class="card-body text-dark">
-                            <ul>
+                            
                                 {{#each burgers}}
                                     {{!-- #unless because values burgers with devoured=false return "falsy" values --}}
                                     {{#unless devoured}}
@@ -49,16 +49,16 @@
                                         {{> burgers/burger-status toBeEaten=true}}
                                     {{/unless}}
                                 {{/each}}
-                            </ul>
+                            
                         </div>
                     </div>
                 </div>
 
                 <div class="col" id="devoured-burgers">
                     <div class="card border-dark">
-                        <div class="card-header">Devoured Burgers</div>
+                        <div class="card-header text-dark">Devoured Burgers</div>
                         <div class="card-body text-dark">
-                            <ul>
+                        
                                 {{#each burgers}}
                                     {{!-- if helper because we expect these burgers now be devoured=true (not falsy)--}}
                                     {{#if devoured}}
@@ -67,7 +67,7 @@
                                         {{> burgers/burger-status devoured=false}}
                                     {{/if}}
                                 {{/each}}
-                            </ul>
+                            
                         </div>
                     </div>
                 </div>

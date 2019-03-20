@@ -14,12 +14,33 @@ body {
     color: white;
 }
 
-header {
-    margin-top: 1rem;
-}
-
 .container {
     flex: 1 0 auto;
+}
+
+header {
+    margin-top: 2rem;
+}
+
+.create-btn-div {
+    margin: 1rem 0 1rem 0;
+}
+
+.all-burgers {
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: rgba(254, 254, 253, 0.85);
+}
+
+.card-body {
+    padding: 0;
+}
+
+.card-body ul {
+    padding: 0;
+    margin: 0;
 }
 
 .sticky-footer {

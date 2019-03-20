@@ -1,9 +1,13 @@
-<li>
-	{{burgerName}}
+<ul class="list-group list-group-flush">
+	<li class="list-group-item rounded-bottom">
+		{{burger_name}}
 
-	<button class="btn-dark change-status" data-id="{{id}}" data-toBeEaten="{{toBeEaten}}">
-		{{#if toBeEaten}}Eat Now!{{else}}Eat Again Later!{{/if}}
-	</button>
+		<button class="btn-outline-dark d-inline change-status ml-2" title="Eat Me!" data-id="{{id}}" data-toBeEaten="{{toBeEaten}}">
+			{{#if toBeEaten}}<i class="fas fa-hamburger"></i>{{else}}Eat Again Later!{{/if}}
+		</button>
 
-	<button class="btn-dark delete-btn" data-id="{{this.id}}"><i class="far fa-trash-alt"></i></button>
-</li>
+		<button class="btn-outline-dark d-inline delete-btn" title="Delete" data-id="{{this.id}}">
+			<i class="far fa-trash-alt"></i>
+		</button>
+	</li>
+</ul>
