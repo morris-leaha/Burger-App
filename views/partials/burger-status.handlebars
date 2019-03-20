@@ -1,0 +1,9 @@
+<li>
+	{{burgerName}}
+
+	<button class="btn-dark change-status" data-id="{{id}}" data-toBeEaten="{{toBeEaten}}">
+		{{#if toBeEaten}}Eat Now!{{else}}Eat Again Later!{{/if}}
+	</button>
+
+	<button class="btn-dark delete-btn" data-id="{{this.id}}"><i class="far fa-trash-alt"></i></button>
+</li>

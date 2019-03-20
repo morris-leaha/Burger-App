@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="input-group mt-3">
-                        <input type="text" class="form-control" placeholder="Burger Name..." aria-label="Burger Name..."
+                        <input type="text" class="form-control" name="burgerName" placeholder="Burger Name..." aria-label="Burger Name..."
                             aria-describedby="submit-btn">
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="submit" id="submit-btn">Save</button>
@@ -44,7 +44,9 @@
                                 {{#each burgers}}
                                     {{!-- #unless because values burgers with devoured=false return "falsy" values --}}
                                     {{#unless devoured}}
-                                        {{> burgers/burger-option devoured=false}}
+                                        {{!-- Calling partial parameter: will render the 'change-status' btn based on conditional statement --}}
+                                        {{!-- In this case, it should show 'Eat Now!' button --}}
+                                        {{> burgers/burger-status toBeEaten=true}}
                                     {{/unless}}
                                 {{/each}}
                             </ul>
@@ -60,7 +62,9 @@
                                 {{#each burgers}}
                                     {{!-- if helper because we expect these burgers now be devoured=true (not falsy)--}}
                                     {{#if devoured}}
-                                        {{> burgers/burger-option devoured=true}}
+                                        {{!-- Calling partial parameter: will render the 'change-status' btn based on conditional statement --}}
+                                        {{!-- In this case, it should show 'Eat Again Later!' button --}}
+                                        {{> burgers/burger-status devoured=false}}
                                     {{/if}}
                                 {{/each}}
                             </ul>
