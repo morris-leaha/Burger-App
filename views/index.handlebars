@@ -22,13 +22,15 @@
         <section id="create-burger">
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="input-group create-burg-div">
-                        <input type="text" class="form-control" name="burgerName" placeholder="Burger Name..." aria-label="Burger Name..."
-                            aria-describedby="submit-btn">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary text-white" type="submit" id="submit-btn">Save</button>
+                    <form class="create-burger-form">
+                        <div class="input-group create-burg-div">
+                            <input type="text" class="form-control" id="userInputBurger" name="burgerName" placeholder="Burger Name..."
+                                aria-label="Burger Name..." aria-describedby="submit-btn">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary text-white" type="submit" id="submit-btn">Save</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </section>
@@ -40,16 +42,17 @@
                     <div class="card border-dark">
                         <div class="card-header text-dark">Burgers to Eat</div>
                         <div class="card-body text-dark">
-                            
-                                {{#each burgers}}
-                                    {{!-- #unless because values burgers with devoured=false return "falsy" values --}}
-                                    {{#unless devoured}}
-                                        {{!-- Calling partial parameter: will render the 'change-status' btn based on conditional statement --}}
-                                        {{!-- In this case, it should show 'Eat Now!' button --}}
-                                        {{> burgers/burger-status devourstate=true}}
-                                    {{/unless}}
-                                {{/each}}
-                            
+
+                            {{#each burgers}}
+                            {{!-- #unless because values burgers with devoured=false return "falsy" values --}}
+                            {{#unless devoured}}
+                            {{!-- Calling partial parameter: will render the 'change-status' btn based on conditional
+                            statement --}}
+                            {{!-- In this case, it should show 'Eat Now!' button --}}
+                            {{> burgers/burger-status devourstate=true}}
+                            {{/unless}}
+                            {{/each}}
+
                         </div>
                     </div>
                 </div>
@@ -58,16 +61,17 @@
                     <div class="card border-dark">
                         <div class="card-header text-dark">Devoured Burgers</div>
                         <div class="card-body text-dark">
-                        
-                                {{#each burgers}}
-                                    {{!-- if helper because we expect these burgers now be devoured=true (not falsy)--}}
-                                    {{#if devoured}}
-                                        {{!-- Calling partial parameter: will render the 'change-status' btn based on conditional statement --}}
-                                        {{!-- In this case, it should show 'Eat Again Later!' button --}}
-                                        {{> burgers/burger-status devourstate=false}}
-                                    {{/if}}
-                                {{/each}}
-                            
+
+                            {{#each burgers}}
+                            {{!-- if helper because we expect these burgers now be devoured=true (not falsy)--}}
+                            {{#if devoured}}
+                            {{!-- Calling partial parameter: will render the 'change-status' btn based on conditional
+                            statement --}}
+                            {{!-- In this case, it should show 'Eat Again Later!' button --}}
+                            {{> burgers/burger-status devourstate=false}}
+                            {{/if}}
+                            {{/each}}
+
                         </div>
                     </div>
                 </div>
