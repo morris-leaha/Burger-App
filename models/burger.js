@@ -21,6 +21,11 @@ var burger = {
         orm.updateOne("burgers", objectCols, specLocation, function(results) {
             cb(result);
         });
+    },
+    deleteBurger: function(specLocation, cb) {
+        orm.delete("burgers", specLocation, function(result) {
+            cb(result);
+        });
     }
 };
 
