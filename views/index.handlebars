@@ -22,7 +22,7 @@
         <section id="create-burger">
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="input-group create-btn-div">
+                    <div class="input-group create-burg-div">
                         <input type="text" class="form-control" name="burgerName" placeholder="Burger Name..." aria-label="Burger Name..."
                             aria-describedby="submit-btn">
                         <div class="input-group-append">
@@ -46,7 +46,7 @@
                                     {{#unless devoured}}
                                         {{!-- Calling partial parameter: will render the 'change-status' btn based on conditional statement --}}
                                         {{!-- In this case, it should show 'Eat Now!' button --}}
-                                        {{> burgers/burger-status toBeEaten=true}}
+                                        {{> burgers/burger-status devourstate=true}}
                                     {{/unless}}
                                 {{/each}}
                             
@@ -64,7 +64,7 @@
                                     {{#if devoured}}
                                         {{!-- Calling partial parameter: will render the 'change-status' btn based on conditional statement --}}
                                         {{!-- In this case, it should show 'Eat Again Later!' button --}}
-                                        {{> burgers/burger-status devoured=false}}
+                                        {{> burgers/burger-status devourstate=false}}
                                     {{/if}}
                                 {{/each}}
                             

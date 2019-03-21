@@ -1,11 +1,19 @@
 <ul class="list-group list-group-flush">
 	<li class="list-group-item rounded-bottom">
+		{{!-- Display Burger Name --}}
 		{{burger_name}}
 
-		<button class="btn-outline-dark d-inline change-status ml-2" title="Eat Me!" data-id="{{id}}" data-toBeEaten="{{toBeEaten}}">
-			{{#if toBeEaten}}<i class="fas fa-hamburger"></i>{{else}}Eat Again Later!{{/if}}
+		{{!-- Change Statue of Burger Buttons --}}
+			{{!-- Populate the button with current db id value by using data attribute of data-id --}}
+			{{!-- Populate the button with current devourstate boolean value set by partial parameter (index.handlebars) by using data attribute of data-newdevourstate --}}
+		<button class="btn-outline-dark d-inline change-status ml-2" title="Eat Me!" data-id="{{id}}" data-newdevourstate="{{devourstate}}">
+			{{!-- Use conditional statement to determine which button should be displayed --}}
+			{{!-- if devourstate=true, should render "Eat Now!" btn | should be displayed for burgers with devoured db values of false --}}
+			{{!-- if devourstate=false, should render "Eat Again Later!" btn | should be displayed for burgers with devoured db values of true --}}
+			{{#if devourstate}}Eat Now!<i class="fas fa-hamburger"></i>{{else}}Eat Again Later!{{/if}}
 		</button>
 
+		{{!-- Delete Burger --}}
 		<button class="btn-outline-dark d-inline delete-btn" title="Delete" data-id="{{this.id}}">
 			<i class="far fa-trash-alt"></i>
 		</button>
