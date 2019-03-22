@@ -4,6 +4,16 @@ Burger Diary is a web-based application that lets users input/add the names of b
 ## Deployment
 This app is deployed using Heroku.  Click <a href="https://devour-that-burger.herokuapp.com/">here</a> to start interacting.
 
+## Interactions
+Insert a New Burger
+![InsertOne](public/assets/images/insertOne-burger.gif)
+
+Update Devoured Status of Burger
+![UpdateOne](public/assets/images/updateOne-burger.gif)
+
+Delete a Burger
+![DeleteOne](public/assets/images/deleteOne-burger.gif)
+
 ## Tools/Technologies Used
 <a href="https://www.npmjs.com/package/mysql">MySQL</a><br>
 <a href="https://getbootstrap.com/">Bootstrap</a><br>
