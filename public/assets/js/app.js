@@ -7,7 +7,7 @@ $(function() {
         $(".create-burger-form").on("submit", function(event) {
             // Use event.preventDefault(); 
             event.preventDefault(); 
-            console.log("hi, plz work!");
+            
             // "Grab" value of burger name from input field --> store in as object
             var newBurg = {
                 burger_name: $("#userInputBurger").val().trim()

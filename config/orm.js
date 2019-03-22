@@ -53,8 +53,6 @@ var orm = {
         var queryString = "INSERT INTO " + tableName + " (" + col.toString() + ") ";
         queryString += "VALUES (" + handleQuestionMarks(vals.length) + ") ";
 
-        console.log(queryString);
-
         // This will allow the database to search the query with the value from the client/user input
         connection.query(queryString, vals, function(err, result) {
             if (err) throw err;
@@ -66,8 +64,6 @@ var orm = {
         var queryString = "UPDATE " + tableName;
         queryString += " SET " + objectToSql(objectCols);
         queryString += " WHERE " + specLocation;
-
-        console.log(queryString);
 
         connection.query(queryString, function(err, result) {
             if (err) throw err;

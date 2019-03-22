@@ -17,7 +17,6 @@ router.get("/", function(req, res) {
         var hbsBurgers = {
             burgers: burgerData
         };
-        console.log(hbsBurgers);
         // Render index.handlebars with db information 
         res.render("index", hbsBurgers);
     });
@@ -25,8 +24,6 @@ router.get("/", function(req, res) {
 
 // Call insertBurger method belonging to burger object to allow user to post a new burger to db
 router.post("/api/burgers", function(req, res) {
-    console.log("hit!");
-    console.log(req.body);
     burger.insertBurger(["burger_name", "devoured"], [req.body.burger_name, false], function(result) {
         // Have the result of the new burger added sent back as a json object with the id of the new entry row
         res.json({ id: result.insertId });
@@ -38,7 +35,6 @@ router.put("/api/burgers/:id", function(req, res) {
     // "Grab" the ID of the exisiting burger user wants to update
     // Store in variable:
     var specLocation = "id = " + req.params.id;
-    console.log("specLocation", specLocation);
 
     // Only need to worry about updating if burger is devoured or not
     burger.updateBurger({ devoured: req.body.devoured }, specLocation, function(result) {
