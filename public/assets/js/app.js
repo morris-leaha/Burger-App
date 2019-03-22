@@ -4,9 +4,10 @@ $(function() {
 
     // FOR USER TO ADD A NEW BURGER:
         // Attach $().on("submit") event handler to user input field, when user hits submit button
-        $(".create-burg-form").on("submit", function(event) {
+        $(".create-burger-form").on("submit", function(event) {
             // Use event.preventDefault(); 
             event.preventDefault(); 
+            console.log("hi, plz work!");
             // "Grab" value of burger name from input field --> store in as object
             var newBurg = {
                 burger_name: $("#userInputBurger").val().trim()

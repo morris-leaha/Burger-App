@@ -18,12 +18,12 @@ var burger = {
     // Supplying the tableName, but needs object key/value pairs (columns and values) & where to update
     // Callback fxn will be defined later in controllers
     updateBurger: function(objectCols, specLocation, cb) {
-        orm.updateOne("burgers", objectCols, specLocation, function(results) {
+        orm.updateOne("burgers", objectCols, specLocation, function(result) {
             cb(result);
         });
     },
     deleteBurger: function(specLocation, cb) {
-        orm.delete("burgers", specLocation, function(result) {
+        orm.deleteOne("burgers", specLocation, function(result) {
             cb(result);
         });
     }

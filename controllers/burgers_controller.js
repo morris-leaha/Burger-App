@@ -25,7 +25,9 @@ router.get("/", function(req, res) {
 
 // Call insertBurger method belonging to burger object to allow user to post a new burger to db
 router.post("/api/burgers", function(req, res) {
-    burger.insertBurger(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result) {
+    console.log("hit!");
+    console.log(req.body);
+    burger.insertBurger(["burger_name", "devoured"], [req.body.burger_name, false], function(result) {
         // Have the result of the new burger added sent back as a json object with the id of the new entry row
         res.json({ id: result.insertId });
     });
@@ -44,7 +46,8 @@ router.put("/api/burgers/:id", function(req, res) {
             // Handle errors
             return res.status(404).end();
         }
-        res.status(200).end();
+        res.status(200);
+        res.json(result);
     });
 });
 

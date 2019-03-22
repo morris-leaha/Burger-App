@@ -50,7 +50,7 @@ var orm = {
     },
     // Store new entry into database
     insertOne: function(tableName, col, vals, cb) {
-        var queryString = "INSERT INTO " + tableName + " (" + col.toString(); + ") ";
+        var queryString = "INSERT INTO " + tableName + " (" + col.toString() + ") ";
         queryString += "VALUES (" + handleQuestionMarks(vals.length) + ") ";
 
         console.log(queryString);
@@ -73,6 +73,15 @@ var orm = {
             if (err) throw err;
             cb(result);
         });
+    },
+    deleteOne: function(tableName, specLocation, cb) {
+      var queryString = "DELETE FROM " + tableName;
+      queryString += " WHERE " + specLocation;
+
+      connection.query(queryString, function(err, result) {
+        if (err) throw err;
+        cb(result);
+      });
     }
 };
 
