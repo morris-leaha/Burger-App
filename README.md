@@ -6,12 +6,15 @@ This app is deployed using Heroku.  Click <a href="https://devour-that-burger.he
 
 ## Interactions
 Insert a New Burger
+<br>
 ![InsertOne](public/assets/images/insertOne-burger.gif)
 
 Update Devoured Status of Burger
+<br>
 ![UpdateOne](public/assets/images/updateOne-burger.gif)
 
 Delete a Burger
+<br>
 ![DeleteOne](public/assets/images/deleteOne-burger.gif)
 
 ## Tools/Technologies Used
