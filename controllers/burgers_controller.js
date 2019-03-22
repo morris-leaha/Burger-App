@@ -36,7 +36,7 @@ router.put("/api/burgers/:id", function(req, res) {
     // "Grab" the ID of the exisiting burger user wants to update
     // Store in variable:
     var specLocation = "id = " + req.params.id;
-    console.log("specLocation is: " + specLocation);
+    console.log("specLocation", specLocation);
 
     // Only need to worry about updating if burger is devoured or not
     burger.updateBurger({ devoured: req.body.devoured }, specLocation, function(result) {
