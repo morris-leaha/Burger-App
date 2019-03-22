@@ -12,6 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     color: white;
+    font-family: 'Noto Serif JP', serif;
 }
 
 .container {
@@ -22,8 +23,21 @@ header {
     margin-top: 2rem;
 }
 
+h1 {
+    font-size: 3.5rem;
+}
+
+.app-instructions {
+    font-family: 'Roboto', sans-serif;
+}
+
 .create-burg-div {
     margin: 1rem 0 1rem 0;
+}
+
+.app-instructions {
+    font-size: 1.1rem;
+    margin-top: 12px;
 }
 
 .all-burgers {
